@@ -1,16 +1,22 @@
 {
   "id": "com.petkit.homey",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "compatibility": ">=5.0.0",
   "sdk": 3,
-  "platforms": ["local", "cloud"],
-  "name": { "en": "PetKit", "no": "PetKit" },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "name": {
+    "en": "PetKit",
+    "no": "PetKit"
+  },
   "description": {
     "en": "Connect your PetKit smart pet devices to Homey",
     "no": "Koble PetKit smarte kjæledyrenheter til Homey"
   },
   "brandColor": "#FF6B35",
-  "category": ["appliances"],
+  "category": "appliances",
   "permissions": [],
   "images": {
     "small": "/assets/images/small.png",
@@ -24,62 +30,182 @@
   "capabilities": {
     "petkit_litter_status": {
       "type": "enum",
-      "title": { "en": "Litter Box Status", "no": "Katteboks status" },
+      "title": {
+        "en": "Litter Box Status",
+        "no": "Katteboks status"
+      },
       "values": [
-        { "id": "idle",        "title": { "en": "Idle",        "no": "Ledig" } },
-        { "id": "cleaning",    "title": { "en": "Cleaning",    "no": "Rengjøring" } },
-        { "id": "cat_inside",  "title": { "en": "Cat inside",  "no": "Katt inni" } },
-        { "id": "maintenance", "title": { "en": "Maintenance", "no": "Vedlikehold" } },
-        { "id": "paused",      "title": { "en": "Paused",      "no": "Pauset" } },
-        { "id": "dumping",     "title": { "en": "Dumping",     "no": "Tømmer" } },
-        { "id": "error",       "title": { "en": "Error",       "no": "Feil" } },
-        { "id": "unknown",     "title": { "en": "Unknown",     "no": "Ukjent" } }
+        {
+          "id": "idle",
+          "title": {
+            "en": "Idle",
+            "no": "Ledig"
+          }
+        },
+        {
+          "id": "cleaning",
+          "title": {
+            "en": "Cleaning",
+            "no": "Rengjøring"
+          }
+        },
+        {
+          "id": "cat_inside",
+          "title": {
+            "en": "Cat inside",
+            "no": "Katt inni"
+          }
+        },
+        {
+          "id": "maintenance",
+          "title": {
+            "en": "Maintenance",
+            "no": "Vedlikehold"
+          }
+        },
+        {
+          "id": "paused",
+          "title": {
+            "en": "Paused",
+            "no": "Pauset"
+          }
+        },
+        {
+          "id": "dumping",
+          "title": {
+            "en": "Dumping",
+            "no": "Tømmer"
+          }
+        },
+        {
+          "id": "error",
+          "title": {
+            "en": "Error",
+            "no": "Feil"
+          }
+        },
+        {
+          "id": "unknown",
+          "title": {
+            "en": "Unknown",
+            "no": "Ukjent"
+          }
+        }
       ],
-      "getable": true, "setable": false, "insights": true
+      "getable": true,
+      "setable": false,
+      "insights": true
     },
     "petkit_litter_level": {
-      "type": "number", "title": { "en": "Litter Level", "no": "Grusnivå" },
-      "units": "%", "min": 0, "max": 100, "decimals": 0,
-      "getable": true, "setable": false, "insights": true
+      "type": "number",
+      "title": {
+        "en": "Litter Level",
+        "no": "Grusnivå"
+      },
+      "units": "%",
+      "min": 0,
+      "max": 100,
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true
     },
     "petkit_waste_bin": {
-      "type": "number", "title": { "en": "Waste Bin", "no": "Søppelkasse" },
-      "units": "%", "min": 0, "max": 100, "decimals": 0,
-      "getable": true, "setable": false, "insights": true
+      "type": "number",
+      "title": {
+        "en": "Waste Bin",
+        "no": "Søppelkasse"
+      },
+      "units": "%",
+      "min": 0,
+      "max": 100,
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true
     },
     "petkit_cat_weight": {
-      "type": "number", "title": { "en": "Cat Weight", "no": "Kattvekt" },
-      "units": "kg", "min": 0, "max": 20, "decimals": 2,
-      "getable": true, "setable": false, "insights": true
+      "type": "number",
+      "title": {
+        "en": "Cat Weight",
+        "no": "Kattvekt"
+      },
+      "units": "kg",
+      "min": 0,
+      "max": 20,
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "insights": true
     },
     "petkit_food_level": {
-      "type": "number", "title": { "en": "Food Level", "no": "Matnivå" },
-      "units": "%", "min": 0, "max": 100, "decimals": 0,
-      "getable": true, "setable": false, "insights": true
+      "type": "number",
+      "title": {
+        "en": "Food Level",
+        "no": "Matnivå"
+      },
+      "units": "%",
+      "min": 0,
+      "max": 100,
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true
     },
     "petkit_dispensed_today": {
-      "type": "number", "title": { "en": "Dispensed Today", "no": "Gitt i dag" },
-      "units": "g", "min": 0, "decimals": 0,
-      "getable": true, "setable": false, "insights": true
+      "type": "number",
+      "title": {
+        "en": "Dispensed Today",
+        "no": "Gitt i dag"
+      },
+      "units": "g",
+      "min": 0,
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true
     },
     "petkit_eating": {
-      "type": "boolean", "title": { "en": "Pet is Eating", "no": "Kjæledyr spiser" },
-      "getable": true, "setable": false, "insights": true
+      "type": "boolean",
+      "title": {
+        "en": "Pet is Eating",
+        "no": "Kjæledyr spiser"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
     },
     "petkit_water_level": {
-      "type": "number", "title": { "en": "Water Level", "no": "Vannivå" },
-      "units": "%", "min": 0, "max": 100, "decimals": 0,
-      "getable": true, "setable": false, "insights": true
+      "type": "number",
+      "title": {
+        "en": "Water Level",
+        "no": "Vannivå"
+      },
+      "units": "%",
+      "min": 0,
+      "max": 100,
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true
     }
   },
   "drivers": [
     {
       "id": "petkit_device",
-      "name": { "en": "PetKit Device", "no": "PetKit enhet" },
+      "name": {
+        "en": "PetKit Device",
+        "no": "PetKit enhet"
+      },
       "class": "other",
       "capabilities": [],
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "images": {
         "small": "/drivers/petkit_device/assets/images/small.png",
         "large": "/drivers/petkit_device/assets/images/large.png",
@@ -93,17 +219,34 @@
           "id": "login_credentials",
           "template": "login_credentials",
           "options": {
-            "title": { "en": "Log in to PetKit", "no": "Logg inn på PetKit" },
-            "usernameLabel": { "en": "Email", "no": "E-post" },
-            "usernamePlaceholder": { "en": "your@email.com", "no": "din@epost.no" },
-            "passwordLabel": { "en": "Password", "no": "Passord" },
-            "passwordPlaceholder": { "en": "Password", "no": "Passord" }
+            "title": {
+              "en": "Log in to PetKit",
+              "no": "Logg inn på PetKit"
+            },
+            "usernameLabel": {
+              "en": "Email",
+              "no": "E-post"
+            },
+            "usernamePlaceholder": {
+              "en": "your@email.com",
+              "no": "din@epost.no"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "no": "Passord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "no": "Passord"
+            }
           }
         },
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": { "next": "add_devices" }
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
@@ -116,106 +259,272 @@
     "triggers": [
       {
         "id": "device_online_changed",
-        "title": { "en": "Device online status changed", "no": "Enhetens tilkoblingsstatus endret" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }],
+        "title": {
+          "en": "Device online status changed",
+          "no": "Enhetens tilkoblingsstatus endret"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ],
         "tokens": [
           {
             "name": "online",
             "type": "boolean",
-            "title": { "en": "Online", "no": "Tilkoblet" }
+            "title": {
+              "en": "Online",
+              "no": "Tilkoblet"
+            }
           }
         ]
       },
       {
         "id": "litter_box_cleaning_started",
-        "title": { "en": "Litter box cleaning started", "no": "Katteboks rengjøring startet" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Litter box cleaning started",
+          "no": "Katteboks rengjøring startet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "litter_box_cleaning_finished",
-        "title": { "en": "Litter box cleaning finished", "no": "Katteboks rengjøring ferdig" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Litter box cleaning finished",
+          "no": "Katteboks rengjøring ferdig"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "cat_entered_litter_box",
-        "title": { "en": "Cat entered litter box", "no": "Katt gikk inn i katteboks" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Cat entered litter box",
+          "no": "Katt gikk inn i katteboks"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "cat_left_litter_box",
-        "title": { "en": "Cat left litter box", "no": "Katt forlot katteboks" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Cat left litter box",
+          "no": "Katt forlot katteboks"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "waste_bin_full",
-        "title": { "en": "Waste bin is full", "no": "Søppelkassen er full" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Waste bin is full",
+          "no": "Søppelkassen er full"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "food_level_low",
-        "title": { "en": "Food level is low", "no": "Matnivå er lavt" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Food level is low",
+          "no": "Matnivå er lavt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "pet_started_eating",
-        "title": { "en": "Pet started eating", "no": "Kjæledyr begynte å spise" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Pet started eating",
+          "no": "Kjæledyr begynte å spise"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "pet_stopped_eating",
-        "title": { "en": "Pet stopped eating", "no": "Kjæledyr sluttet å spise" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Pet stopped eating",
+          "no": "Kjæledyr sluttet å spise"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       }
     ],
     "conditions": [
       {
         "id": "device_is_online",
-        "title": { "en": "Device !{{is|is not}} online", "no": "Enhet er !{{tilkoblet|ikke tilkoblet}}" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Device !{{is|is not}} online",
+          "no": "Enhet er !{{tilkoblet|ikke tilkoblet}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "litter_box_is_clean",
-        "title": { "en": "Litter box !{{is|is not}} clean", "no": "Katteboks er !{{ren|ikke ren}}" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Litter box !{{is|is not}} clean",
+          "no": "Katteboks er !{{ren|ikke ren}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "feeder_has_food",
-        "title": { "en": "Feeder !{{has|does not have}} food", "no": "Mater !{{har|har ikke}} mat" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Feeder !{{has|does not have}} food",
+          "no": "Mater !{{har|har ikke}} mat"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       }
     ],
     "actions": [
       {
         "id": "start_cleaning",
-        "title": { "en": "Start litter box cleaning", "no": "Start rengjøring av katteboks" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Start litter box cleaning",
+          "no": "Start rengjøring av katteboks"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "stop_cleaning",
-        "title": { "en": "Stop litter box cleaning", "no": "Stopp rengjøring av katteboks" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Stop litter box cleaning",
+          "no": "Stopp rengjøring av katteboks"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "odor_removal",
-        "title": { "en": "Start odor removal", "no": "Start luktfjerning" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Start odor removal",
+          "no": "Start luktfjerning"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "toggle_light",
-        "title": { "en": "Toggle light", "no": "Slå av/på lys" },
-        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+        "title": {
+          "en": "Toggle light",
+          "no": "Slå av/på lys"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          }
+        ]
       },
       {
         "id": "manual_feed",
-        "title": { "en": "Dispense food", "no": "Gi mat" },
-        "titleFormatted": { "en": "Dispense [[amount]]g of food", "no": "Gi [[amount]]g mat" },
+        "title": {
+          "en": "Dispense food",
+          "no": "Gi mat"
+        },
+        "titleFormatted": {
+          "en": "Dispense [[amount]]g of food",
+          "no": "Gi [[amount]]g mat"
+        },
         "args": [
-          { "type": "device", "name": "device", "filter": "driver_id=petkit_device" },
           {
-            "name": "amount", "type": "number",
-            "title": { "en": "Amount (grams)", "no": "Mengde (gram)" },
-            "min": 10, "max": 200, "step": 10,
-            "placeholder": { "en": "e.g. 10", "no": "f.eks. 10" }
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=petkit_device"
+          },
+          {
+            "name": "amount",
+            "type": "number",
+            "title": {
+              "en": "Amount (grams)",
+              "no": "Mengde (gram)"
+            },
+            "min": 10,
+            "max": 200,
+            "step": 10,
+            "placeholder": {
+              "en": "e.g. 10",
+              "no": "f.eks. 10"
+            }
           }
         ]
       }
