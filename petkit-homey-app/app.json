@@ -110,6 +110,18 @@
   "flow": {
     "triggers": [
       {
+        "id": "device_online_changed",
+        "title": { "en": "Device online status changed", "no": "Enhetens tilkoblingsstatus endret" },
+        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }],
+        "tokens": [
+          {
+            "name": "online",
+            "type": "boolean",
+            "title": { "en": "Online", "no": "Tilkoblet" }
+          }
+        ]
+      },
+      {
         "id": "litter_box_cleaning_started",
         "title": { "en": "Litter box cleaning started", "no": "Katteboks rengjøring startet" },
         "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
@@ -152,6 +164,11 @@
     ],
     "conditions": [
       {
+        "id": "device_is_online",
+        "title": { "en": "Device !{{is|is not}} online", "no": "Enhet er !{{tilkoblet|ikke tilkoblet}}" },
+        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+      },
+      {
         "id": "litter_box_is_clean",
         "title": { "en": "Litter box !{{is|is not}} clean", "no": "Katteboks er !{{ren|ikke ren}}" },
         "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
@@ -176,6 +193,11 @@
       {
         "id": "odor_removal",
         "title": { "en": "Start odor removal", "no": "Start luktfjerning" },
+        "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
+      },
+      {
+        "id": "toggle_light",
+        "title": { "en": "Toggle light", "no": "Slå av/på lys" },
         "args": [{ "type": "device", "name": "device", "filter": "driver_id=petkit_device" }]
       },
       {
