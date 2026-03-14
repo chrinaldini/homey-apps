@@ -7,6 +7,50 @@ class PetKitDriver extends Homey.Driver {
 
   async onInit() {
     this.log('PetKit driver initialized');
+
+    // Actions
+    this.homey.flow.getActionCard('start_cleaning')
+      .registerRunListener(async ({ device }) => device.startCleaning());
+
+    this.homey.flow.getActionCard('stop_cleaning')
+      .registerRunListener(async ({ device }) => device.stopCleaning());
+
+    this.homey.flow.getActionCard('odor_removal')
+      .registerRunListener(async ({ device }) => device.odorRemoval());
+
+    this.homey.flow.getActionCard('toggle_light')
+      .registerRunListener(async ({ device }) => device.toggleLight());
+
+    this.homey.flow.getActionCard('manual_feed')
+      .registerRunListener(async ({ device, amount }) => device.manualFeed(amount));
+
+    // Conditions
+    this.homey.flow.getConditionCard('device_is_online')
+      .registerRunListener(async ({ device }) => {
+        return device.getCapabilityValue('alarm_connected') === true;
+      });
+
+    this.homey.flow.getConditionCard('litter_box_is_clean')
+      .registerRunListener(async ({ device }) => {
+        return device.getCapabilityValue('petkit_litter_status') === 'idle';
+      });
+
+    this.homey.flow.getConditionCard('feeder_has_food')
+      .registerRunListener(async ({ device }) => {
+        const level = device.getCapabilityValue('petkit_food_level');
+        return level !== null && level > 0;
+      });
+
+    // Store trigger card references for use by devices
+    this.triggerDeviceOnlineChanged    = this.homey.flow.getDeviceTriggerCard('device_online_changed');
+    this.triggerCleaningStarted        = this.homey.flow.getDeviceTriggerCard('litter_box_cleaning_started');
+    this.triggerCleaningFinished       = this.homey.flow.getDeviceTriggerCard('litter_box_cleaning_finished');
+    this.triggerCatEntered             = this.homey.flow.getDeviceTriggerCard('cat_entered_litter_box');
+    this.triggerCatLeft                = this.homey.flow.getDeviceTriggerCard('cat_left_litter_box');
+    this.triggerWasteBinFull           = this.homey.flow.getDeviceTriggerCard('waste_bin_full');
+    this.triggerFoodLevelLow           = this.homey.flow.getDeviceTriggerCard('food_level_low');
+    this.triggerPetStartedEating       = this.homey.flow.getDeviceTriggerCard('pet_started_eating');
+    this.triggerPetStoppedEating       = this.homey.flow.getDeviceTriggerCard('pet_stopped_eating');
   }
 
   async onPair(session) {
@@ -32,7 +76,7 @@ class PetKitDriver extends Homey.Driver {
         await api.login();
         this._api = api;
         this.log('Pairing: login OK');
-        return true; // true = success, false = failed
+        return true;
       } catch (err) {
         this.error('Pairing: login failed:', err.message);
         throw new Error(err.message || 'Innlogging feilet');
