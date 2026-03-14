@@ -77,6 +77,10 @@ class PetKitDevice extends Homey.Device {
   async _update(s, cat) {
     const online = !!(s.state?.pim === 1 || s.online);
     await this._set('alarm_connected', online);
+    if (online !== this._prev.online) {
+      this._trigger('device_online_changed', true, { online });
+      this._prev.online = online;
+    }
 
     if (cat === 'litter_box') await this._updateLitter(s);
     if (cat === 'feeder')     await this._updateFeeder(s);
@@ -139,9 +143,9 @@ class PetKitDevice extends Homey.Device {
     await this.setCapabilityValue(cap, val).catch(e => this.error(`set ${cap}:`, e.message));
   }
 
-  _trigger(id, condition) {
+  _trigger(id, condition, tokens = {}) {
     if (!condition) return;
-    this.homey.flow.getDeviceTriggerCard(id).trigger(this, {}).catch(e => this.error('trigger:', e));
+    this.homey.flow.getDeviceTriggerCard(id).trigger(this, tokens).catch(e => this.error('trigger:', e));
   }
 
   // ── Commands called by Flow actions ──
@@ -152,6 +156,10 @@ class PetKitDevice extends Homey.Device {
     const t = Number(this.getSettings().deviceType);
     if (t === 4 || t === 13) await this._api.manualFeedD4(this.getData().id, amount);
     else                     await this._api.manualFeed(this.getData().id, amount);
+  }
+
+  async toggleLight() {
+    await this._api.updateSetting(this.getData().id, 'lightMode', 1);
   }
 }
 
