@@ -1,0 +1,168 @@
+{
+  "petkit_litter_status": {
+    "type": "enum",
+    "title": {
+      "en": "Litter Box Status",
+      "no": "Katteboks status"
+    },
+    "values": [
+      { "id": "idle",        "title": { "en": "Idle",         "no": "Ledig" } },
+      { "id": "cleaning",    "title": { "en": "Cleaning",     "no": "Rengjøring" } },
+      { "id": "cat_inside",  "title": { "en": "Cat inside",   "no": "Katt inni" } },
+      { "id": "maintenance", "title": { "en": "Maintenance",  "no": "Vedlikehold" } },
+      { "id": "paused",      "title": { "en": "Paused",       "no": "Pauset" } },
+      { "id": "dumping",     "title": { "en": "Dumping",      "no": "Tømmer" } },
+      { "id": "error",       "title": { "en": "Error",        "no": "Feil" } },
+      { "id": "unknown",     "title": { "en": "Unknown",      "no": "Ukjent" } }
+    ],
+    "getable": true,
+    "setable": false,
+    "insights": true,
+    "icon": "/assets/capabilities/litter_box.svg"
+  },
+
+  "petkit_litter_level": {
+    "type": "number",
+    "title": {
+      "en": "Litter Level (%)",
+      "no": "Grussnivå (%)"
+    },
+    "units": "%",
+    "min": 0,
+    "max": 100,
+    "decimals": 0,
+    "getable": true,
+    "setable": false,
+    "insights": true
+  },
+
+  "petkit_waste_bin": {
+    "type": "number",
+    "title": {
+      "en": "Waste Bin (%)",
+      "no": "Søppelkasse (%)"
+    },
+    "units": "%",
+    "min": 0,
+    "max": 100,
+    "decimals": 0,
+    "getable": true,
+    "setable": false,
+    "insights": true
+  },
+
+  "petkit_cat_weight": {
+    "type": "number",
+    "title": {
+      "en": "Cat Weight (kg)",
+      "no": "Kattvekt (kg)"
+    },
+    "units": "kg",
+    "min": 0,
+    "max": 20,
+    "decimals": 2,
+    "getable": true,
+    "setable": false,
+    "insights": true
+  },
+
+  "petkit_error": {
+    "type": "string",
+    "title": {
+      "en": "Error Message",
+      "no": "Feilmelding"
+    },
+    "getable": true,
+    "setable": false
+  },
+
+  "petkit_food_level": {
+    "type": "number",
+    "title": {
+      "en": "Food Level (%)",
+      "no": "Matnivå (%)"
+    },
+    "units": "%",
+    "min": 0,
+    "max": 100,
+    "decimals": 0,
+    "getable": true,
+    "setable": false,
+    "insights": true
+  },
+
+  "petkit_dispensed_today": {
+    "type": "number",
+    "title": {
+      "en": "Dispensed Today (g)",
+      "no": "Gitt i dag (g)"
+    },
+    "units": "g",
+    "min": 0,
+    "decimals": 0,
+    "getable": true,
+    "setable": false,
+    "insights": true
+  },
+
+  "petkit_next_feed": {
+    "type": "string",
+    "title": {
+      "en": "Next Feed Time",
+      "no": "Neste matetidspunkt"
+    },
+    "getable": true,
+    "setable": false
+  },
+
+  "petkit_eating": {
+    "type": "boolean",
+    "title": {
+      "en": "Pet is Eating",
+      "no": "Kjæledyr spiser"
+    },
+    "getable": true,
+    "setable": false,
+    "insights": true
+  },
+
+  "petkit_water_level": {
+    "type": "number",
+    "title": {
+      "en": "Water Level (%)",
+      "no": "Vannivå (%)"
+    },
+    "units": "%",
+    "min": 0,
+    "max": 100,
+    "decimals": 0,
+    "getable": true,
+    "setable": false,
+    "insights": true
+  },
+
+  "petkit_air_quality": {
+    "type": "number",
+    "title": {
+      "en": "Air Quality",
+      "no": "Luftkvalitet"
+    },
+    "min": 0,
+    "max": 500,
+    "decimals": 0,
+    "getable": true,
+    "setable": false,
+    "insights": true
+  },
+
+  "alarm_connected": {
+    "type": "boolean",
+    "title": {
+      "en": "Device Online",
+      "no": "Enhet online"
+    },
+    "getable": true,
+    "setable": false,
+    "insights": true
+  }
+}

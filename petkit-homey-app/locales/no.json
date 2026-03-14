@@ -1,0 +1,26 @@
+{
+  "pair": {
+    "login_credentials": {
+      "title": "Logg inn på PetKit",
+      "username": "E-postadresse",
+      "password": "Passord",
+      "next": "Neste"
+    },
+    "list_devices": {
+      "title": "Velg PetKit-enhetene dine",
+      "loading": "Laster enheter...",
+      "no_devices": "Ingen enheter funnet. Sjekk at du bruker riktig konto og region."
+    }
+  },
+  "settings": {
+    "region": {
+      "label": "PetKit server-region",
+      "hint": "Velg regionen som samsvarer med din PetKit-konto. Feil region = innlogging feiler."
+    }
+  },
+  "error": {
+    "login_failed":   "Innlogging feilet. Sjekk e-post og passord.",
+    "no_credentials": "Ingen påloggingsinfo funnet. Prøv å koble til enheten på nytt.",
+    "api_error":      "PetKit API-feil: {{message}}"
+  }
+}

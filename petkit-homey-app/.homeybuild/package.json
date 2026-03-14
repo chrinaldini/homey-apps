@@ -1,0 +1,18 @@
+{
+  "name": "com.petkit.homey",
+  "version": "1.0.0",
+  "description": "PetKit integration for Homey",
+  "main": "app.js",
+  "scripts": {
+    "start": "homey app run",
+    "deploy": "homey app publish"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "homey": "*"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "license": "MIT"
+}

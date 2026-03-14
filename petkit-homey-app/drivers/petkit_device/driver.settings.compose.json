@@ -1,0 +1,42 @@
+[
+  {
+    "id": "username",
+    "type": "text",
+    "label": { "en": "Email", "no": "E-post" },
+    "value": "",
+    "hint": { "en": "Your PetKit account email", "no": "Din PetKit e-postadresse" }
+  },
+  {
+    "id": "password",
+    "type": "password",
+    "label": { "en": "Password", "no": "Passord" },
+    "value": "",
+    "hint": { "en": "Your PetKit password", "no": "Ditt PetKit-passord" }
+  },
+  {
+    "id": "region",
+    "type": "dropdown",
+    "label": { "en": "Region", "no": "Region" },
+    "value": "EU",
+    "values": [
+      { "id": "EU",    "label": { "en": "Europe (EU)",     "no": "Europa (EU)" } },
+      { "id": "US",    "label": { "en": "USA",             "no": "USA" } },
+      { "id": "Asia",  "label": { "en": "Asia",            "no": "Asia" } },
+      { "id": "China", "label": { "en": "China",           "no": "Kina" } }
+    ]
+  },
+  {
+    "id": "deviceCategory",
+    "type": "text",
+    "label": { "en": "Device Category", "no": "Enhetskategori" },
+    "value": "",
+    "hint": { "en": "Set automatically during pairing", "no": "Settes automatisk under paring" }
+  },
+  {
+    "id": "deviceType",
+    "type": "text",
+    "label": { "en": "Device Type ID", "no": "Enhetstype ID" },
+    "value": "",
+    "hint": { "en": "Set automatically during pairing", "no": "Settes automatisk under paring" }
+  }
+]

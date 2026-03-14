@@ -1,0 +1,26 @@
+{
+  "pair": {
+    "login_credentials": {
+      "title": "Log in to PetKit",
+      "username": "Email address",
+      "password": "Password",
+      "next": "Next"
+    },
+    "list_devices": {
+      "title": "Select your PetKit devices",
+      "loading": "Loading devices...",
+      "no_devices": "No devices found. Make sure you are using the correct account and region."
+    }
+  },
+  "settings": {
+    "region": {
+      "label": "PetKit Server Region",
+      "hint": "Select the region that matches your PetKit account. Wrong region = login fails."
+    }
+  },
+  "error": {
+    "login_failed":   "Login failed. Check your email and password.",
+    "no_credentials": "No credentials found. Please re-pair the device.",
+    "api_error":      "PetKit API error: {{message}}"
+  }
+}
