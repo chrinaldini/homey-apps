@@ -14,11 +14,12 @@
   "permissions": [],
   "images": {
     "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
-    "name": "PetKit Homey",
-    "email": "noreply@example.com"
+    "name": "Christopher S. Nicolaysen",
+    "email": "christopher@snicolaysen.no"
   },
   "capabilities": {
     "petkit_litter_status": {
@@ -81,7 +82,8 @@
       "connectivity": ["cloud"],
       "images": {
         "small": "/drivers/petkit_device/assets/images/small.png",
-        "large": "/drivers/petkit_device/assets/images/large.png"
+        "large": "/drivers/petkit_device/assets/images/large.png",
+        "xlarge": "/drivers/petkit_device/assets/images/xlarge.png"
       },
       "pair": [
         {
