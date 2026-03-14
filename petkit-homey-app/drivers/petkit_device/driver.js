@@ -14,12 +14,16 @@ class PetKitDriver extends Homey.Driver {
     let password = '';
     let region   = 'EU';
 
+    // Called by the custom select_region view
+    session.setHandler('select_region', async ({ region: r }) => {
+      region = r || 'EU';
+      this.log(`Pairing: region selected = ${region}`);
+    });
+
     // Called automatically by the login_credentials template
     session.setHandler('login', async (data) => {
       username = data.username;
       password = data.password;
-      // Region stored in app settings, fall back to EU
-      region = await this.homey.settings.get('region') || 'EU';
 
       this.log(`Pairing: login attempt for ${username} region=${region}`);
 
